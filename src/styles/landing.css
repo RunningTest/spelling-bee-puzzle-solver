@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Solway:wght@700&display=swap");
+
+body {
+  font-family: "Solway", serif;
+  background-color: #f7da21;
+  color: black;
+}
+
+input {
+  border-color: #ffffff;
+  border-width: 0.1em;
+  background-color: transparent;
+  color: transparent;
+  border-radius: 1.4em;
+}
+
+::-webkit-input-placeholder {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 34px;
+  color: rgba(3, 3, 3, 0.3);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 34px;
+  color: white;
+  text-align: center;
+  width: 250px;
+  height: 40px;
+}
+
+.main-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.letters-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.solver-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 400px;
+}
+
+.button {
+  margin: 0 12px 0 12px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 1.5em;
+  align-content: center;
+  font-size: 1em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  letter-spacing: 0.01em;
+  width: 136px;
+  height: 3em;
+}
+
+.solution-suggestions h3 {
+  text-decoration: underline;
+}
+
+#cell-input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+#cell-input-container input {
+  position: absolute;
+  background: transparent;
+  height: 40px;
+  width: 250px;
+}
