@@ -6,6 +6,8 @@ const AllSuggestedWords = ({ potentialWords }) => {
   let suggestionsArray = [];
   Object.keys(potentialWords).map((word) => suggestionsArray.push(word));
 
+  suggestionsArray.sort((a, b) => a.length - b.length).reverse()
+
   const listItems = suggestionsArray.map((word, index) => {
     return(<li key={index}>{word}</li>)
   })
