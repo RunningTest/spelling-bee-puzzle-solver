@@ -8,7 +8,7 @@ const cleanWordList = (wordList) => {
   let letters = [];
 
   for (let word in wordList) {
-    if (word.length < 3) {
+    if (word.length < 4) {
       delete wordList[word];
     }
   }

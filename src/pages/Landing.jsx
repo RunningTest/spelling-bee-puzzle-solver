@@ -13,13 +13,21 @@ import "../styles/landing.css";
 
 const Landing = () => {
   const [message, setMessage] = useState("Input letters here");
+  const [one, setOne] = useState();
+  const [two, setTwo] = useState();
+  const [three, setThree] = useState();
+  const [four, setFour] = useState();
+  const [five, setFive] = useState();
+  const [six, setSix] = useState();
+  const [seven, setSeven] = useState();
   const [cellInput, setCellInput] = useState([]);
   const [cleanedList, setCleanedList] = useState();
   const [recievedWords, setRecievedWords] = useState(false);
   const [suggestions, setSuggestions] = useState();
-  
+
   let potentialWords, lettersSet, highlightedLetter;
   let allSubmittedLetters = [];
+  let inputArray = [];
 
   const onlyLetters = (str) => {
     return /^[a-zA-Z]{1,7}$/.test(str);
@@ -27,6 +35,28 @@ const Landing = () => {
 
   const handleChange = (e) => {
     if (onlyLetters(e.target.value)) {
+      inputArray = e.target.value.split("");
+      if (inputArray[0]) {
+        setOne(inputArray[0].toUpperCase());
+      }
+      if (inputArray[1]) {
+        setTwo(inputArray[1].toUpperCase());
+      }
+      if (inputArray[2]) {
+        setThree(inputArray[2].toUpperCase());
+      }
+      if (inputArray[3]) {
+        setFour(inputArray[3].toUpperCase());
+      }
+      if (inputArray[4]) {
+        setFive(inputArray[4].toUpperCase());
+      }
+      if (inputArray[5]) {
+        setSix(inputArray[5].toUpperCase());
+      }
+      if (inputArray[6]) {
+        setSeven(inputArray[6].toUpperCase());
+      }
       setCellInput(e.target.value.toUpperCase());
     } else {
       setMessage("Please only enter letters");
@@ -37,7 +67,7 @@ const Landing = () => {
     e.preventDefault();
     allSubmittedLetters = cellInput.toLowerCase().split("");
     lettersSet = new Set(allSubmittedLetters);
-    highlightedLetter = allSubmittedLetters[0]
+    highlightedLetter = allSubmittedLetters[0];
     if (lettersSet.size !== 7) {
       setMessage("No double letters allowed!");
     } else {
@@ -48,6 +78,13 @@ const Landing = () => {
   };
 
   const refresh = (e) => {
+    setOne()
+    setTwo()
+    setThree()
+    setFour()
+    setFive()
+    setSix()
+    setSeven()
     setCellInput([]);
     setMessage("Input letters here");
     setRecievedWords(false);
@@ -57,7 +94,11 @@ const Landing = () => {
 
   const Solver = (cellInput) => {
     let cleaned_list = cleanWordList(words);
-    potentialWords = findAllPossibleWords(highlightedLetter, lettersSet, cleaned_list);
+    potentialWords = findAllPossibleWords(
+      highlightedLetter,
+      lettersSet,
+      cleaned_list
+    );
     setCleanedList(potentialWords);
     setRecievedWords(true);
   };
@@ -84,11 +125,15 @@ const Landing = () => {
         <h3>{message}</h3>
         <div className="solver-container">
           <div id="cell-input-container">
-            <label id="input-cells-label">
-              {cellInput}
+            <div className="cells">
+              <div className="row" id="top-row">
+                <div className="hexagon">{two}</div>
+                <div className="hexagon">{seven}</div>
+              </div>
+              <div className="row" id="middle-row">
+                <div className="hexagon">{three}</div>
+                <div className="hexagon" id="middle-cell">
               <input
-                placeholder="ABC"
-                id="top-row"
                 type="text"
                 name="top-row"
                 maxLength={7}
@@ -96,7 +141,19 @@ const Landing = () => {
                 autoComplete="off"
                 value={cellInput}
                 onChange={handleChange}
+                autoFocus
               />
+                  {one}
+                </div>
+                <div className="hexagon">{six}</div>
+              </div>
+              <div className="row" id="bottom-row">
+                <div className="hexagon">{four}</div>
+                <div className="hexagon">{five}</div>
+              </div>
+            </div>
+            <label id="input-cells-label">
+              {cellInput}
             </label>
           </div>
 

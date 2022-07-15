@@ -2,16 +2,15 @@
 
 body {
   font-family: "Solway", serif;
-  background-color: #f7da21;
+  background-color: #ffffff;
   color: black;
 }
 
 input {
-  border-color: #ffffff;
-  border-width: 0.1em;
+  border-color:#f7da21 ;
+
   background-color: transparent;
   color: transparent;
-  border-radius: 1.4em;
 }
 
 ::-webkit-input-placeholder {
@@ -71,6 +70,44 @@ label {
   text-decoration: underline;
 }
 
+.cells{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.row{
+  display:flex;
+  flex-direction: column;
+}
+
+.hexagon{
+  margin: 2px;
+  height: 2.3em;
+  width: 2.3em;
+  background-color: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 34px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+#two{
+  position: relative;
+  font-size: 34px;
+  background-color: #981f1f;
+  color: #f7da21;
+  z-index: 4;
+}
+#middle-row{
+  margin: 0 -20px 0 -20px;
+}
+
 #cell-input-container {
   position: relative;
   display: flex;
@@ -81,6 +118,15 @@ label {
 #cell-input-container input {
   position: absolute;
   background: transparent;
-  height: 40px;
-  width: 250px;
+  height: 57px;
+  width: 57px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* input[type='text']:focus{
+  background-color: #981f1f;
+ }​ */
+
+#middle-cell {
+  background-color: #f7da21;
 }
