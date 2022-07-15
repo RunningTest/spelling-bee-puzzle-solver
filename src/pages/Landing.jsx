@@ -14,12 +14,19 @@ import "../styles/landing.css";
 const Landing = () => {
   const [message, setMessage] = useState("Input letters here");
   const [one, setOne] = useState();
+  const [oneClass, setOneClass] = useState(true);
   const [two, setTwo] = useState();
+  const [twoClass, setTwoClass] = useState(false);
   const [three, setThree] = useState();
+  const [threeClass, setThreeClass] = useState(false);
   const [four, setFour] = useState();
+  const [fourClass, setFourClass] = useState(false);
   const [five, setFive] = useState();
+  const [fiveClass, setFiveClass] = useState(false);
   const [six, setSix] = useState();
+  const [sixClass, setSixClass] = useState(false);
   const [seven, setSeven] = useState();
+  const [sevenClass, setSevenClass] = useState(false);
   const [cellInput, setCellInput] = useState([]);
   const [cleanedList, setCleanedList] = useState();
   const [recievedWords, setRecievedWords] = useState(false);
@@ -38,24 +45,37 @@ const Landing = () => {
       inputArray = e.target.value.split("");
       if (inputArray[0]) {
         setOne(inputArray[0].toUpperCase());
+        setOneClass(false);
+        setTwoClass(true);
       }
       if (inputArray[1]) {
         setTwo(inputArray[1].toUpperCase());
+        setTwoClass(false);
+        setThreeClass(true);
       }
       if (inputArray[2]) {
         setThree(inputArray[2].toUpperCase());
+        setThreeClass(false);
+        setFourClass(true);
       }
       if (inputArray[3]) {
         setFour(inputArray[3].toUpperCase());
+        setFourClass(false);
+        setFiveClass(true);
       }
       if (inputArray[4]) {
         setFive(inputArray[4].toUpperCase());
+        setFiveClass(false);
+        setSixClass(true);
       }
       if (inputArray[5]) {
         setSix(inputArray[5].toUpperCase());
+        setSixClass(false);
+        setSevenClass(true);
       }
       if (inputArray[6]) {
         setSeven(inputArray[6].toUpperCase());
+        setSevenClass(false);
       }
       setCellInput(e.target.value.toUpperCase());
     } else {
@@ -78,13 +98,13 @@ const Landing = () => {
   };
 
   const refresh = (e) => {
-    setOne()
-    setTwo()
-    setThree()
-    setFour()
-    setFive()
-    setSix()
-    setSeven()
+    setOne();
+    setTwo();
+    setThree();
+    setFour();
+    setFive();
+    setSix();
+    setSeven();
     setCellInput([]);
     setMessage("Input letters here");
     setRecievedWords(false);
@@ -127,34 +147,47 @@ const Landing = () => {
           <div id="cell-input-container">
             <div className="cells">
               <div className="row" id="top-row">
-                <div className="hexagon">{two}</div>
-                <div className="hexagon">{seven}</div>
+                <div className={twoClass ? "hexagon focus" : "hexagon"}>
+                  {two}
+                </div>
+                <div className={sevenClass ? "hexagon focus" : "hexagon"}>
+                  {seven}
+                </div>
               </div>
               <div className="row" id="middle-row">
-                <div className="hexagon">{three}</div>
-                <div className="hexagon" id="middle-cell">
-              <input
-                type="text"
-                name="top-row"
-                maxLength={7}
-                required
-                autoComplete="off"
-                value={cellInput}
-                onChange={handleChange}
-                autoFocus
-              />
+                <div className={threeClass ? "hexagon focus" : "hexagon"}>
+                  {three}
+                </div>
+                <div
+                  className={oneClass ? "hexagon focus" : "hexagon"}
+                  id="middle-cell"
+                >
+                  <input
+                    type="text"
+                    name="top-row"
+                    maxLength={7}
+                    required
+                    autoComplete="off"
+                    value={cellInput}
+                    onChange={handleChange}
+                    autoFocus
+                  />
                   {one}
                 </div>
-                <div className="hexagon">{six}</div>
+                <div className={sixClass ? "hexagon focus" : "hexagon"}>
+                  {six}
+                </div>
               </div>
               <div className="row" id="bottom-row">
-                <div className="hexagon">{four}</div>
-                <div className="hexagon">{five}</div>
+                <div className={fourClass ? "hexagon focus" : "hexagon"}>
+                  {four}
+                </div>
+                <div className={fiveClass ? "hexagon focus" : "hexagon"}>
+                  {five}
+                </div>
               </div>
             </div>
-            <label id="input-cells-label">
-              {cellInput}
-            </label>
+            <label id="input-cells-label">{cellInput}</label>
           </div>
 
           <div className="button-container">

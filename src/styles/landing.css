@@ -127,6 +127,10 @@ label {
   background-color: #981f1f;
  }​ */
 
+.focus{
+  background-color: #b0ad4c;
+}
+
 #middle-cell {
   background-color: #f7da21;
 }
