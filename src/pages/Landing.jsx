@@ -12,7 +12,7 @@ import AllSuggestedWords from "../components/AllSuggestedWords";
 import "../styles/landing.css";
 
 const Landing = () => {
-  const [message, setMessage] = useState("Input letters here");
+  const [message, setMessage] = useState("Select the yellow cell and enter letters.");
   const [one, setOne] = useState();
   const [oneClass, setOneClass] = useState(true);
   const [two, setTwo] = useState();
@@ -128,7 +128,7 @@ const Landing = () => {
   useEffect(() => {
     const suggestedWords = () => {
       if (recievedWords) {
-        setMessage("All Possible words found!");
+        setMessage("Search completed!");
         return <AllSuggestedWords potentialWords={cleanedList} />;
       }
     };
@@ -170,7 +170,6 @@ const Landing = () => {
                     autoComplete="off"
                     value={cellInput}
                     onChange={handleChange}
-                    autoFocus
                   />
                   {one}
                 </div>

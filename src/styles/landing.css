@@ -7,17 +7,17 @@ body {
 }
 
 input {
+  text-align: center;
   border-color:#f7da21 ;
-
   background-color: transparent;
   color: transparent;
 }
 
-::-webkit-input-placeholder {
+/* ::-webkit-input-placeholder {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 34px;
   color: rgba(3, 3, 3, 0.3);
-}
+} */
 
 label {
   display: flex;
@@ -100,7 +100,7 @@ label {
 #two{
   position: relative;
   font-size: 34px;
-  background-color: #981f1f;
+  /* background-color: #981f1f; */
   color: #f7da21;
   z-index: 4;
 }
@@ -118,8 +118,8 @@ label {
 #cell-input-container input {
   position: absolute;
   background: transparent;
-  height: 57px;
-  width: 57px;
+  height: 97px;
+  width: 97px;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 

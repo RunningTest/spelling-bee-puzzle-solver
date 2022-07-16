@@ -12,15 +12,22 @@ const AllSuggestedWords = ({ potentialWords }) => {
     return(<li key={index}>{word}</li>)
   })
 
+  if(suggestionsArray.length !== 0) {
   return (
     <>
-      <h3>Possible solutions:</h3>
       <div className="all-suggested-words">
         <h4>All possible words: </h4>
         <ul>{listItems}</ul>
       </div>
     </>
-  );
+  )
+  } else {
+    return (
+    <>
+    <h2>No words found</h2>
+  </>
+    )
+  }
 };
 
 export default AllSuggestedWords;
