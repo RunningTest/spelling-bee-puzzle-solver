@@ -31,10 +31,12 @@ const Landing = () => {
   const [cleanedList, setCleanedList] = useState();
   const [recievedWords, setRecievedWords] = useState(false);
   const [suggestions, setSuggestions] = useState();
+  const [dictionary, setDictionary] = useState(words)
 
   let potentialWords, lettersSet, highlightedLetter;
   let allSubmittedLetters = [];
   let inputArray = [];
+  let cleaned_list= [];
 
   const onlyLetters = (str) => {
     return /^[a-zA-Z]{1,7}$/.test(str);
@@ -99,6 +101,7 @@ const Landing = () => {
 
   const refresh = (e) => {
     setOne();
+    setOneClass(true);
     setTwo();
     setThree();
     setFour();
@@ -106,14 +109,20 @@ const Landing = () => {
     setSix();
     setSeven();
     setCellInput([]);
+    setCleanedList()
     setMessage("Input letters here");
     setRecievedWords(false);
     setSuggestions();
-    allSubmittedLetters = [];
+    setDictionary(words)
+    inputArray =[];
+    allSubmittedLetters =[];
+    cleaned_list = []
+    lettersSet ={}
   };
 
   const Solver = (cellInput) => {
-    let cleaned_list = cleanWordList(words);
+    cleaned_list = cleanWordList(dictionary);
+    console.log("CLEANED LIST: ", cleaned_list)
     potentialWords = findAllPossibleWords(
       highlightedLetter,
       lettersSet,
@@ -170,6 +179,8 @@ const Landing = () => {
                     autoComplete="off"
                     value={cellInput}
                     onChange={handleChange}
+                    spellCheck="false"
+                    autoFocus={true}
                   />
                   {one}
                 </div>

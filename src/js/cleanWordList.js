@@ -5,24 +5,10 @@
 // words with double letters allowed.
 
 const cleanWordList = (wordList) => {
-  let letters = [];
 
   for (let word in wordList) {
     if (word.length < 4) {
       delete wordList[word];
-    }
-  }
-
-  for (let word in wordList) {
-    letters = word.split("");
-    let num = 1;
-    while (num < letters.length) {
-      if (letters[num] === letters[num - 1]) {
-        delete wordList[word];
-        num = letters.length;
-      } else {
-        num += 1;
-      }
     }
   }
 

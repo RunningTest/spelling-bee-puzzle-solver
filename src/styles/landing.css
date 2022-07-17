@@ -130,7 +130,21 @@ label {
 .focus{
   background-color: #b0ad4c;
 }
+.focus::after {
+  content: "";
+  width: 5px;
+  height: 34px;
+  background: #433845;
+  display: inline-block;
+  animation: cursor-blink 0.9s steps(2) infinite;
+}
 
 #middle-cell {
   background-color: #f7da21;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
 }
