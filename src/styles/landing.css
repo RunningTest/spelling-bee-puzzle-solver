@@ -131,9 +131,10 @@ label {
   background-color: #b0ad4c;
 }
 .focus::after {
+  margin-top: 60%;
   content: "";
-  width: 5px;
-  height: 34px;
+  width: 35px;
+  height: 4px;
   background: #433845;
   display: inline-block;
   animation: cursor-blink 0.9s steps(2) infinite;

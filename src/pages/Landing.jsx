@@ -12,7 +12,9 @@ import AllSuggestedWords from "../components/AllSuggestedWords";
 import "../styles/landing.css";
 
 const Landing = () => {
-  const [message, setMessage] = useState("Select the yellow cell and enter letters.");
+  const [message, setMessage] = useState(
+    "Select the yellow cell and enter letters."
+  );
   const [one, setOne] = useState();
   const [oneClass, setOneClass] = useState(true);
   const [two, setTwo] = useState();
@@ -31,12 +33,12 @@ const Landing = () => {
   const [cleanedList, setCleanedList] = useState();
   const [recievedWords, setRecievedWords] = useState(false);
   const [suggestions, setSuggestions] = useState();
-  const [dictionary, setDictionary] = useState(words)
+  // const [dictionary, setDictionary] = useState();
 
   let potentialWords, lettersSet, highlightedLetter;
   let allSubmittedLetters = [];
   let inputArray = [];
-  let cleaned_list= [];
+  let cleaned_list = [];
 
   const onlyLetters = (str) => {
     return /^[a-zA-Z]{1,7}$/.test(str);
@@ -92,14 +94,15 @@ const Landing = () => {
     highlightedLetter = allSubmittedLetters[0];
     if (lettersSet.size !== 7) {
       setMessage("No double letters allowed!");
+      clearCells();
     } else {
       setMessage("searching ...");
       setRecievedWords(false);
-      Solver(cellInput.toLowerCase());
+      Solver();
     }
   };
 
-  const refresh = (e) => {
+  const clearCells = () => {
     setOne();
     setOneClass(true);
     setTwo();
@@ -109,21 +112,24 @@ const Landing = () => {
     setSix();
     setSeven();
     setCellInput([]);
-    setCleanedList()
+  };
+
+  const refresh = (e) => {
+    clearCells();
+    setCleanedList();
     setMessage("Input letters here");
     setRecievedWords(false);
     setSuggestions();
-    setDictionary(words)
-    inputArray =[];
-    allSubmittedLetters =[];
-    cleaned_list = []
-    lettersSet ={}
+    inputArray = [];
+    allSubmittedLetters = [];
+    cleaned_list = [];
+    lettersSet = {};
   };
 
-  const Solver = (cellInput) => {
-    cleaned_list = cleanWordList(dictionary);
-    console.log("CLEANED LIST: ", cleaned_list)
-    potentialWords = findAllPossibleWords(
+  const Solver = async () => {
+    cleaned_list = await cleanWordList(words);
+    console.log("CLEANED LIST: ", cleaned_list);
+    potentialWords = await findAllPossibleWords(
       highlightedLetter,
       lettersSet,
       cleaned_list
