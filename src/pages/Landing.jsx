@@ -114,18 +114,6 @@ const Landing = () => {
     setCellInput([]);
   };
 
-  // const refresh = (e) => {
-  //   clearCells();
-  //   setCleanedList([]);
-  //   setMessage("Input letters here");
-  //   setRecievedWords(false);
-  //   setSuggestions([]);
-  //   inputArray = [];
-  //   allSubmittedLetters = [];
-  //   cleaned_list = [];
-  //   lettersSet = {};
-  //   words = sourceWords
-  // };
 
   const Solver = async () => {
     cleaned_list = await cleanWordList(words);
