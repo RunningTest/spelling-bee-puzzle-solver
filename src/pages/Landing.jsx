@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // assets
-import words from "../data/words_dictionary.json";
+import  sourceWords from "../data/words_dictionary.json";
 import cleanWordList from "../js/cleanWordList.js";
 import findAllPossibleWords from "../js/findAllPossibleWords.js";
 
@@ -33,12 +33,12 @@ const Landing = () => {
   const [cleanedList, setCleanedList] = useState();
   const [recievedWords, setRecievedWords] = useState(false);
   const [suggestions, setSuggestions] = useState();
-  // const [dictionary, setDictionary] = useState();
 
   let potentialWords, lettersSet, highlightedLetter;
   let allSubmittedLetters = [];
   let inputArray = [];
   let cleaned_list = [];
+  let words = sourceWords
 
   const onlyLetters = (str) => {
     return /^[a-zA-Z]{1,7}$/.test(str);
@@ -114,21 +114,21 @@ const Landing = () => {
     setCellInput([]);
   };
 
-  const refresh = (e) => {
-    clearCells();
-    setCleanedList();
-    setMessage("Input letters here");
-    setRecievedWords(false);
-    setSuggestions();
-    inputArray = [];
-    allSubmittedLetters = [];
-    cleaned_list = [];
-    lettersSet = {};
-  };
+  // const refresh = (e) => {
+  //   clearCells();
+  //   setCleanedList([]);
+  //   setMessage("Input letters here");
+  //   setRecievedWords(false);
+  //   setSuggestions([]);
+  //   inputArray = [];
+  //   allSubmittedLetters = [];
+  //   cleaned_list = [];
+  //   lettersSet = {};
+  //   words = sourceWords
+  // };
 
   const Solver = async () => {
     cleaned_list = await cleanWordList(words);
-    console.log("CLEANED LIST: ", cleaned_list);
     potentialWords = await findAllPossibleWords(
       highlightedLetter,
       lettersSet,
@@ -218,7 +218,7 @@ const Landing = () => {
               type="button"
               value="Refresh"
               autoComplete="off"
-              onClick={refresh}
+              onClick={() => window.location.reload(false)}
             />
           </div>
         </div>

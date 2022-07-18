@@ -17,8 +17,6 @@ const getAllWords = (
     }
   }
 
-  console.log(cleaned_list);
-
   return cleaned_list;
 };
 

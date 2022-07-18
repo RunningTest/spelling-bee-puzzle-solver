@@ -13,6 +13,7 @@ const cleanWordList = (wordList) => {
   }
 
   return wordList;
+
 };
 
 export default cleanWordList;
