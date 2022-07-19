@@ -1,13 +1,21 @@
 # Spelling-Bee-Word-Game-Solver
+![IMG](https://i.imgur.com/pLjGi5ll.png) 
 
-After finishing a letter boxed solver, I was looking for a small side project to work on. 
+After finishing a letter boxed solver, I was looking for a small side project to work on. I was spending alot of my time during the day learning and practicing DSAs. This project was what I did to wind down. It seemed to be a logical next step as I also spend some time each day trying to come up with words to solve the puzzle.
 
-Going into this, I think the logic for this should be easier than the Letter Boxes solver, in my mind it should be similar as to finding all the words needed for the letter boxed solver. (I could be wrong). 
+I used ReactJS 18, this is a Front-End only, web-app designed mobile first. 
 
-The challenge for me going into this will be the CSS and seeing if I can create a way to input the letters in a way that makes the letters appear in the proper 'cell' as they are being entered. 
+# Deployed Link : [Spelling Bee Word Puzzle Solver.](https://spelling-bee-word-puzzle-solver.netlify.app/)
 
-I have a few ideas as to how I may approach it using a 'onChange' function and splitting the input into an array allowing each letter to appear in a label as being entered. We shall see if my journey to the finished project takes me a different route. 
+## More Screenshots:
 
-That is one of the main reasons for this app, practice coding, seeing if I can think through the project and pseudo code it out, and then see what challenges come my way.
+![Imgur](https://i.imgur.com/LGHF87gl.png) ![Imgur](https://i.imgur.com/sKSNTqAl.png) ![Imgur](https://i.imgur.com/0NBT0ctl.png)
 
-I am looking forward to seeing what the end results look like (design wise and code wise.)
+A challenge I faced while working on this project was how to enter letters in each cell most effeciently. I opted to have only one input field. It is located in the middle/yellow cell. However I have created a fake cursor and focus class in CSS to give the appearance of actually typing in each cell. 
+
+## There are a few ice-box features: 
+
+* When going backwards to correct an entry the focus doesn't change backwards.
+* A second 'feature' to work on is that as you backspace to correct a mistyped letter, the old letter remains visible, even though slightly off center until a new letter is type.
+* I really need to find a better word list with more common words, too many of the suggested words are not in the New York Times dictionary.
+

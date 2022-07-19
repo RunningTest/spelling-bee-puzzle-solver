@@ -130,6 +130,7 @@ label {
 .focus{
   background-color: #b0ad4c;
 }
+
 .focus::after {
   margin-top: 60%;
   content: "";
