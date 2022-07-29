@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // assets
-import  sourceWords from "../data/words_dictionary.json";
+import sourceWords from "../data/words_dictionary.json";
 import cleanWordList from "../js/cleanWordList.js";
 import findAllPossibleWords from "../js/findAllPossibleWords.js";
 
