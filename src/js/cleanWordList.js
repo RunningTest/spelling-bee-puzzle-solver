@@ -1,8 +1,7 @@
 // This is a helper function I wrote to clean up my
 // words_dictionary.json file. This function cleans
-// the word list of all words not allowed by letter box
-// There are no words shorter than 3 characters and no
-// words with double letters allowed.
+// the word list of all words not allowed by spelling bee
+// There are no words shorter than 4 characters allowed.
 
 const cleanWordList = (wordList) => {
 
