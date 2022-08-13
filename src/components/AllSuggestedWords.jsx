@@ -1,5 +1,6 @@
 import React from "react";
 
+// style
 import "../styles/allSuggestedWords.css";
 
 const AllSuggestedWords = ({ potentialWords }) => {

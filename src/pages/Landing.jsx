@@ -191,7 +191,6 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            <label id="input-cells-label">{cellInput}</label>
           </div>
 
           <div className="button-container">

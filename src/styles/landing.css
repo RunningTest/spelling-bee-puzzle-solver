@@ -2,8 +2,8 @@
 
 body {
   font-family: "Solway", serif;
-  background-color: #ffffff;
-  color: black;
+  background-color: var(--background-color);
+  color:var(--font-color);
 }
 
 input {
@@ -13,22 +13,20 @@ input {
   color: transparent;
 }
 
-/* ::-webkit-input-placeholder {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 34px;
-  color: rgba(3, 3, 3, 0.3);
-} */
-
 label {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 34px;
-  color: white;
+  color:invisible;
   text-align: center;
   width: 250px;
   height: 40px;
+}
+
+.title-container{
+  margin-top: 25px;
 }
 
 .main-page-container {
@@ -49,18 +47,18 @@ label {
   flex-direction: column;
   align-items: center;
   width: 350px;
-  height: 400px;
+  margin-bottom: 25px;
 }
 
 .button {
   margin: 0 12px 0 12px;
-  background-color: black;
+  background-color: var(--font-color);
   border: 1px solid black;
   border-radius: 1.5em;
   align-content: center;
   font-size: 1em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: white;
+  color: var(--background-color);
   letter-spacing: 0.01em;
   width: 136px;
   height: 3em;
@@ -87,7 +85,8 @@ label {
   margin: 2px;
   height: 2.3em;
   width: 2.3em;
-  background-color: #e6e6e6;
+  background-color: var(--hexagon-color);
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,6 +103,7 @@ label {
   color: #f7da21;
   z-index: 4;
 }
+
 #middle-row{
   margin: 0 -20px 0 -20px;
 }
@@ -122,10 +122,6 @@ label {
   width: 97px;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
-
-/* input[type='text']:focus{
-  background-color: #981f1f;
- }​ */
 
 .focus{
   background-color: #b0ad4c;
