@@ -22,7 +22,7 @@ const Nav = () => {
     <>
       <div id="humburger">
         <nav className="navBar">
-          <button className="hamburger-button" onClick={handleToggle}>
+          <button className="hamburger-button" aria-label="navigation menu" onClick={handleToggle}>
             {navbarOpen ? (
               <MdClose style={{ width: "40px", height: "40px" }} />
             ) : (
@@ -73,6 +73,7 @@ const Nav = () => {
             href="https://wordle-solving-helper.netlify.app/"
             rel="noreferrer"
             target="_blank"
+            aria-label="Link to Wordle solving helper"
           >
             <span>Wordle Helper</span>
           </a>
@@ -81,6 +82,7 @@ const Nav = () => {
             href="https://spelling-bee-word-puzzle-solver.netlify.app/"
             rel="noreferrer"
             target="_blank"
+            aria-label="Link to spelling bee word puzzle solver"
           >
             <span>Spelling Bee Solver</span>
           </a>
@@ -89,6 +91,7 @@ const Nav = () => {
             href="https://letter-boxed-solver.netlify.app/"
             rel="noreferrer"
             target="_blank"
+            aria-label="Link to letter boxed word puzzle solver"
           >
             <span>Letter Boxed Solver</span>
           </a>

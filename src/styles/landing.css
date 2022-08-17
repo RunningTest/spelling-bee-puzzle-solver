@@ -6,6 +6,10 @@ body {
   color:var(--font-color);
 }
 
+h2{
+  font-size: 18px;
+}
+
 input {
   text-align: center;
   border-color:#f7da21 ;

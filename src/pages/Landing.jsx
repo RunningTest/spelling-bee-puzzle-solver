@@ -145,7 +145,7 @@ const Landing = () => {
         <h1>Spelling Bee Solver</h1>
       </div>
       <form className="letters-input" onSubmit={handleSubmit}>
-        <h3>{message}</h3>
+        <h2>{message}</h2>
         <div className="solver-container">
           <div id="cell-input-container">
             <div className="cells">
@@ -175,6 +175,7 @@ const Landing = () => {
                     onChange={handleChange}
                     spellCheck="false"
                     autoFocus={true}
+                    aria-label="input for letters"
                   />
                   {one}
                 </div>
