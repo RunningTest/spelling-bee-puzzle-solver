@@ -9,7 +9,7 @@
 
 [data-theme="dark"] {
   --font-color: rgb(255, 255, 255);
-  --background-color:black;
+  --background-color: black;
   --slider-color: rgb(199, 199, 199);
   --focus-color: rgb(135, 133, 133);
   --box-background: #c5c4c4;
@@ -30,14 +30,14 @@
 }
 
 .toggle-theme-wrapper span {
-  font-size: 28px;
+  font-size: 15px;
 }
 
 .toggle-theme {
   position: relative;
   display: inline-block;
-  height: 44px;
-  width: 60px;
+  height: 36px;
+  width: 28px;
 }
 
 .toggle-theme input {
@@ -48,9 +48,8 @@
   background-color: var(--font-color);
   position: relative;
   cursor: pointer;
-  top: 10px;
-  height: 26px;
-  width: 52px;
+  top: 11px;
+  height: 15px;
   transition: 0.2s;
   border-radius: 34px;
 }
@@ -59,15 +58,15 @@
   background-color: var(--slider-color);
   bottom: 0px;
   content: "";
-  height: 26px;
+  height: 15px;
+  width: 15px;
   left: 0px;
   position: absolute;
   transition: 0.4s;
-  width: 26px;
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(12px);
 }
 
 input:checked + .slider {
@@ -75,12 +74,25 @@ input:checked + .slider {
 }
 
 .slider.round {
-  border-radius: 34px;
-  width: 52px;
+  width: 28px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.footer-info {
+  position: fixed;
+  padding-left: 15px;
+  text-align: left;
+  bottom: -10px;
+  left: 0;
+  width: 250px;
+}
+
+.footer-info a {
+  padding-left: 6px;
+  font-size: smaller;
 }
 
 a {
@@ -113,7 +125,7 @@ a {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-  
+
 ::-webkit-scrollbar-thumb {
   background-color: rgb(153, 151, 151);
   border-right: none;
@@ -122,7 +134,7 @@ a {
 
 ::-webkit-scrollbar-track-piece:end {
   background: transparent;
-  margin-bottom: 14px; 
+  margin-bottom: 14px;
 }
 
 ::-webkit-scrollbar-track-piece:start {
@@ -202,7 +214,7 @@ a {
   display: none;
   list-style: none;
   position: fixed;
-  top:0px;
+  top: 0px;
   background: rgba(127, 127, 127, 0.88);
   left: -44px;
   bottom: 0;
@@ -238,5 +250,7 @@ a {
   .navBar {
     display: inline;
   }
+  .toggle-theme-wrapper {
+    justify-content: right;
+  }
 }
-
