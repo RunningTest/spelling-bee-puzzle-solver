@@ -55,12 +55,12 @@ const Nav = () => {
             <li>
               {" "}
               <a
-                href="https://letter-boxed-solver.netlify.app/"
+                href="https://letterboxedplus.com/"
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => closeMenu()}
               >
-                {<BsBoundingBoxCircles />} &nbsp;Letter Boxed Solver
+                {<BsBoundingBoxCircles />} &nbsp;Letter Boxed Helper
               </a>
             </li>
           </ul>
@@ -88,12 +88,12 @@ const Nav = () => {
           </a>
           <a
             className="nav-button"
-            href="https://letter-boxed-solver.netlify.app/"
+            href="https://letterboxedplus.com/"
             rel="noreferrer"
             target="_blank"
             aria-label="Link to letter boxed word puzzle solver"
           >
-            <span>Letter Boxed Solver</span>
+            <span>Letter Boxed Helper</span>
           </a>
         </nav>
       </div>
