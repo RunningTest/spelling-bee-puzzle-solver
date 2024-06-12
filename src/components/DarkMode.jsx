@@ -52,8 +52,9 @@ const DarkMode = () => {
       </span>
       <div className="footer-info">
         <p>
-          ©2022 Jan Horak
-          <a href="https://github.com/MrJanHorak/spelling-bee-puzzle-solver"><FaGithub/></a>
+          ©2024 Jan Horak
+          <a href="https://github.com/MrJanHorak/spelling-bee-puzzle-solver"><FaGithub /></a>
+          <a href="/blog.html">Blog</a>
         </p>
       </div>
     </div>
