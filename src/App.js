@@ -3,6 +3,7 @@ import Landing from "./pages/Landing";
 
 // components
 import Nav from "../src/components/Nav"
+import FAQ from "../src/components/FAQ"
 
 // style
 import "../src/styles/App.css";
@@ -14,6 +15,10 @@ function App() {
       <div className="App">
         <Landing />
       </div>
+
+      
+      <FAQ/>
+      
     </>
   );
 }
